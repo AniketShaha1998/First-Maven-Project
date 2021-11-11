@@ -1,0 +1,815 @@
+What is Selenium:
+----------------
+>It is Tool Which is dedicated for Web application testing
+>It is Functional Testing Tool.
+>It is best suited for Regression Testing
+>Free
+>Open Source: Source code is available on internet
+>It is Platform independant (It Supports Multiple OS Linux, MAC, Windows)
+>It Supports Multiple Browsers i.e Chrome, Firefox, Opera, IE browser etc.
+>It Supports Multiple Programming Language i.e Java, C#, ruby, Python etc.
+
+Type of Application:
+1.Console Based  which used CMD
+2.Desktop Based Application: Which needs installation on Every System
+3.Web Application : Application Which needs url(like http://google.com) & they are 		    developed using HTML
+4.Mobile Application: That Needs installation in Every Mobile
+
+
+Selenium Suite:
+--------------
+1.Selenium IDE
+	>It is available as Firefox & Chrome Plug-in
+	>It Supports Record(It automatically Writes Script) & PlayBack(For Playing/Executing recorded 	Script)
+	>It is Good Tool for Person who is wishing to start with Automation Testing 
+	>Easy to Learn & GUI is also Easy
+
+	DisAdvantage:
+	1.It Supports only 2 browser (Chrome & Firefox)
+	2.It does not Support of Programming Language Hence Code Re-usability is not there 	Hence It is not good for Writing Detail Scripts
+	3.data base Testing not possible
+	4.Proper Sharable report is not generated
+	5.Data Reading is not Supported from Excel File
+	6.Only 3 Columns are not Sufficient for Detail Testing
+
+2.Selenium RC | Selenium 1.0 (Selenim RC is Outdated since It is Slow)
+		Selenium RC was Slow since
+		1.RC Server needed as Middle Man in Between Eclipse & Browser Which adds 
+		delay in Execution.
+		2.RC Server needed to be Started & Stopped EveryTime Manually which also adds a 		delay.
+	
+3.Selenium WebDriver | Selenium 2.0 |Selenium 3.0 |Selenium 4.0
+	>Both Supports Multiple Browser testing (like Chrome, Firefox, Opera, IE etc.)
+	>Both Supports Multiple Programming Language i.e Java, ruby, Python, etc.
+	>Both Are Test Designing(Writing Script) + Test Execution Tool.
+	But Selenim RC is Outdated since It was Slow & WebDriver is Fast
+
+	Till Selenium WebDriver Only One System is Sufficient	
+
+4.Selenium Grid:
+	>In this multiple Systems are involve. One Master System(HUB) & Multiple Slave system(Node) 	are involve.
+	>Test Execution will be Controlled from Master System
+	>It is used for various Browser & OS combination like Firefox on MAc, Firefox on Windows, 	Firefox on Linux etc.
+	>With the help of Parallel Testing Execution time is minimized (In Less Time More Execution 	happens)
+	>It is Just Test Execution (Test Scripts are written in the WebDriver Only)
+	>Here, Multiple Machine + Multiple Browser Testing Happens.
+	 
+
+
+Writing Test Case Means you did planning for Testing
+
+Planned Test case > Test Script (So that Tool can understand It)
+Like Selenium understand Java so your Test cases should be converted into Language of tool so that tool can underStand What you have given instruction.
+
+
+System Configuration Needed for Selenium WebDriver:
+---------------------------------------------------
+1.JDK
+2.Eclipse
+3.Selenium Language Binder
+	Selenium Library available for Java, ruby, python
+	Selenium Java Libraries are needed.
+4.Drivers for Every Browser is Needed.
+		Chrome > chromedriver.exe
+		Firefox > geckodriver.exe
+	
+
+
+
+The path to the driver executable must be set by the webdriver.chrome.driver system property;
+
+
+Element Locators:
+-----------------
+These are Unique Properties By Which Selenium is able to identify/find Object on Web Page
+1.id
+2.name
+3.linkText
+4.Css
+5.Xpath
+
+
+
+
+
+Synchronization Problem:
+------------------------
+In this there is mismatch between Speed of Two Things 
+1.Selenium
+2.AUT (OrangeHRM)
+
+
+When to do Automation:(Which Test Case You should consider for Automation)
+-------------------
+1.There is re-usable & repitable Test case.
+	-Smoke Testing
+	-Data Driven Testing:
+		It is process in Which we repeat same steps with different set of Data.
+	-Compatibility Testing
+		Running same test case with different Browser.
+2.Testing which is Not possible Manually
+	-Performance Testing
+
+Why to do Automation:
+>Speed is More
+>Accuracy is More
+>Less Human Errors
+>Night time also can be ustilized
+>Reliable
+>Consistant
+>
+
+
+Xpath Works for Every Object:
+-----------------------------
+
+Absolute Xpath is not recommended Since it is Page Layout dependant. In Next Version LayOut might get Change.
+Absolute Xpath: /html/body/div[3]/form/div/input
+
+Relative Xpath:
+
+
+
+What is CSS:
+------------
+It is used for controlling font, size, allingment,color etc.
+
+
+CSS Attributes/Properties also can be used for locating Object.
+
+1.CSS with ID:
+	tagname#id
+2.CSS with name/type/value/placeholder/any Property
+	tagname[name/type/value/any property='value of that property']
+3.CSS with className
+	tagname.className
+
+
+Aniket Shaha: Unable to 
+HArshit R: Did not read
+Monali Kirde > No Response
+Mayuri Sawant > Responded
+Soumili Das > Did Not Read
+Shubham Gaikwad > Black Box Testing (Did not recieved Complete Answer)
+Sahil Kolge > White & Black Box...Task of Tester
+Piyush Singh > Agile
+Ayush Raj : 
+-----------------------------------------------------------------------
+Working with RadioButton:
+------------------------
+
+
+Thread.sleep() > Not recommended Since It take whole time for Waiting.
+ 
+You should use implict or Explicit wait given By Selenium
+
+Implict Wait :
+	>It is Declared Once at Begining & after that It is Applicable for All below Objects
+	>It waits Only for visibility of Object
+	
+	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));  
+
+ExplictWait:
+	>It Is used Multiple time for Multiple Condition/Object
+	>Here, we Explicitly ask webDriver to Wait
+	>It can wait on various conditions like visiblity, invisibility, alert, frame, title etc. 
+	
+	WebDriverWait wt=new WebDriverWait(driver, Duration.ofSeconds(15));
+	wt.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input[value='2']")));
+
+Both, Takes Only desired time for Waiting	
+
+
+
+Prajakta 
+Sahil 
+Shubham   Gaikwad > Done task Early
+
+
+
+iFrame :
+--------
+Always Starts with tag as 'iframe' & it is used to show content from multiple WebSite/Pages.
+
+
+
+
+
+
+Data Driven Testing:
+		It is process in Which we repeat same steps with different set of Data.
+
+Daily 100 SMS is Limit & on 101th Error is Expected
+Then You need to send 100 sms & 101th Error is Expected
+
+
+Performing same thing with different Set of Data is Called as Data Driven Testing
+
+Test Script						Data-Source
+Test Script(Java)		<Apache POI>		Excel(.net)
+Test Script			<JDBC>			DataBase
+Test Script						DataProvider of TestNG 
+
+
+Next Step is Download Apache POI Since Our Data Will be Stored Mostly in Excel
+-----------------------------------------------------------------------------
+
+Apache POI Supports both Extention of Excel File
+		.xls & .xlsx
+
+Read WorkBook > Read WorkSheet > Read Cells(row, col)
+
+
+xls				.xlsx
+HSSF				XSSF
+
+
+------------------------------------------------------------------------------------------------------------------------
+FrameWork: Set of Rules for having good outcome
+
+
+Test Automation  FrameWork: It is of Re-usable Classes, Methods & Object Repository.
+---------------------------
+
+
+Adv:
+1.LOC will be less
+2.It creates Re-usable Class Which can be Used at Multiple Places
+3.It Hides Complexicity of Programme & It gives a Easy Method for Calling
+
+Types of FrameWork:
+1.User Defined FrameWork:
+	1.Data Driven FrameWork
+	2.KeyWord Driven FrameWork
+	3.Hybrid (Combination of Two or More FrameWork)
+2.Pre-defined FrameWork:
+	1.TestNG
+	2.Junit
+	3.Cucumber
+
+TestNG: (NG Means Next generation) 
+------
+
+By default WebDriver do not have mechanism for generating any reports. So TestNg Gives Power of Generating reports.
+
+Similar to TestNG we have Junit. Let's See Advantage of TestNG over Junit.
+
+Adv of TestNG:
+1.Parallel Testing: (Same Can be Executed Simultanoulsy with two or more Browser or Two or more instance of Same Browser can be Created). Parallel Testing is not available in Junit.
+2.Test Suite(Collection of Multiple Test Classes) can be Created Easily & Classes from Different Package also Can be included.
+	But In case of Junit Classes from Other Package Can not be included in Test Suite.
+3.MeaningFul Annotation name is given.
+ 
+
+
+@BeforeMethod
+@AfterMethod   > Both Executed for Each @Test .i.e if You have two @Test then 2 time BeforeMethod & AfterMethod will Execute.
+
+
+
+Link DataProvider with Excel File.. Copy the Data(UserName & PassWord) from Excel & store into the dataProvider then do DataDrivenTesting
+
+
+@DataProvider is Used for Storing Data used for Testing Internally in the TestNG Class Itself.
+
+Previously we have seen our Data Was Stored in Excel File. Today This Time Our data will be Stored in DataProvider for DataDriven Testing.
+
+
+
+
+Page Object Model:
+------------------
+Number of Java Classes should be Equals to Number of Pages available on WebSite/Application
+And 
+Keep all Objects Property at top & respective actions/steps at the bottom.
+
+Page Object is not officially announce by Selenium but Page Factory is officially given by Selenium 
+
+Why(Advantage):
+---------------
+1.Easy to trace
+2.Easy to Change
+3.Easy to Maintain
+4.Since re-usable Methods are Made Hence we can call those Methods at any time.
+
+
+
+Elements|Object Repository:
+---------------------------
+It is single place where we keep all object Property like xpath, css, name, linkText,id etc so that tomorrow if  any Objects Property is Changed then Tester should feel easiness while doing Changes(If Tester does changes at One Place then it should reflect at all other places Where it has been used)0
+
+Why(Advantage):
+---------------
+1.Easy to trace
+2.Easy to Change
+3.Easy to Maintain
+
+This is done with help of Property file or Json file or xml file;
+
+
+Property file:
+--------------
+
+
+
+Create table 
+Insert some values (Username & Password)
+Do commit of entered record
+
+After this read data from dataBase
+ 
+
+
+
+
+
+jdbc:mysql://148.72.215.41:3306/testingdb
+
+
+
+Java Classes			<Apache POI>		Excel File
+Java Classes			<JDBC>			Database
+
+
+
+Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","oracle");
+
+Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/sonoo","root","root");
+
+What is Maven ?
+---------------
+>It build management tool.(Create, update, edit build )
+>Project Management Tool
+	Since It gives template/Architecture to your Project Hence it will be considered as Project Management Tool.
+>It manages all Jars which is needed to your project
+		-selenium 
+		-apache poi
+		-testng
+		-junit
+		-extent report
+
+
+You download  lib/jar, extract jar, Add as a External Jar, 
+You download  lib/jar, extract jar, Add as a External Jar, 
+
+Extent Report:
+--------------
+To Enhance reporting capability of Selenium Extent report is Used
+
+
+
+
+KeyWordDriven FrameWork:
+------------------------
+It is framework in which re-usable Actions/Keywords are created for every Steps/actions that you perform on Browser. This is created by sr. Automation tester for Jr. Automation Tester for Easiness in Automation Testing.
+
+In Background for Every keyword corresponding methods/Functions are created
+
+
+
+Java	 Apache POI		Excel
+Java	 OJDBC	        	database
+Java	 opencsv		csv
+
+
+
+-------------------------------------------------------------------
+Cucumber: It is BDD (Behavior Driven Development). Here User defines Behavior of Application in 	  Ghekins language.
+
+	Given (Some Pre-condition)
+	When  (User Performs some action)
+	Then (Some Post-Action that should be true after Successful Execution of Steps/Action)
+
+	TDD (Test Driven Development):
+	Write Failing Test Case > Then Developer Write some Code > Runs code to Pass Test Case > 	ReFactor(Do some Changes in Code if Test Case is not Pass) > Runs code to Pass Test Case > 		ReFactor(Do some Changes in Code if Test Case is not Pass)
+
+
+Normal Selenium:
+---------------
+POM(Page Object Model)
+FrameWork
+TestRunner
+PropertyFile Reading
+	>> These Things Can be UnderStood By Only Techncal People
+
+
+Since In Case of BDD FrameWork Gherkins language is used everyOne will be able to uderStand your COde
+including Customer(Not Only Just Developer & Tester)
+
+ADv:
+---
+1.AnyOne Will be able to uderstand your Automation Testing
+2.Here Behavior is given by Customer Hence Here More focus towards Customer is there
+3.Plain English language is used to define Behavior
+
+
+Hooks are same as BeforeTest & AfterTest of TestNG
+
+@Before : Steps for Staring Browser
+@after  : Step for closing
+
+	
+
+1.dryRun
+if dryRun is true then actual Execution of Code will not happen & It will just check whether all steps having matching step defination or not.
+
+2.monochrome= true for formatting console outcome.
+
+In cucumber there is total 3 parts 
+1.feature file
+	Feature
+	Scenario
+	Scenario Outline
+	Given 
+	When 
+	then
+	Examples
+	
+2.stepdefinition
+	Corresponding selenium steps will be available here.
+
+3.Runner
+	Jnunit Runner Class
+	features > Keyword used for giving location of feature file
+	glue > for giving location of StepDefinition
+
+
+	
+-------------------------------------------------------------------------------------------------------------------
+API(Application programming Interface) Testing:
+	
+What is API ?
+--------------
+API is XML/json Format by Which two Applications is able to exchange data.
+
+
+Why API:
+--------
+Today is era of competition & in this world if you want to survive then you should reach to maximum customer(This will give more business).
+
+Hence Maximum booking platform should be supported by maximum vender(Air Asia, Indigo etc.)
+
+
+1.Flight Booking
+2.OpenWeather App > Where you can choose monthly billing system for Your weather farcasting Application
+
+
+
+
+Why API Testing:
+---------------
+
+Selenium Flow:
+-------------
+1.Open Browser
+2.Open Url
+3.Enter flight from
+4.Enter flight to
+5.Select Date
+6.Select Passanger
+7.Select Class
+8.Click on Search
+	>Then EaseMyTrip will visit various  vender 
+	>Collect Data 
+	>Then Display Flights to You
+
+	It will approx 2 Minutes
+
+
+
+In API Testing
+>Directly data(XML n Json format) is send to Air Asia or some other Vender directly
+>And then Available flights will be given back to your API Testing tool.
+
+	It will take approx 30 sec for doing such testing.
+
+
+Adv:
+1.Speed of testing  will be Fast
+2.API Testing can be performed even if Application's GUI is not ready.
+	Note: Selenium is GUI Based Tool . It requires GUI of Applixa
+3.It is language independant
+
+
+
+
+ab9ba35c6b4c11e21862f53861ba67a0 > New API Key
+56702c7b3b6ae87ab12cabab0d2381ad > Old API Key
+
+http://api.openweathermap.org/data/2.5/weather?q=Mumbai&appid=56702c7b3b6ae87ab12cabab0d2381ad
+http://api.openweathermap.org/data/2.5/weather?q=Chennai&appid=56702c7b3b6ae87ab12cabab0d2381ad
+	
+type of request:
+1.Get   > If you want to get some Page from Server 
+2.Post  > If you want to Submit details to server  i.e Registration Process, Searching of the Flight etc.
+		It creates new Resource
+3.put   > Update Existing resource
+4.Delete > Will delete resource from server
+
+
+
+
+Click on Profile > Click on Setting > Developers Setting >Personal Access Token > Click on Generate new Token > Select all Checkboxes & Click on Generate
+
+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
+
+-------------------------------------------------------------------------------------------------
+
+Envrironment:
+-------------
+
+
+Developer's 		Testing				Production | Live
+
+url1			url2				url3
+
+
+Assertions : A Point Where we do Comparision between Expected Behavior & Actual Behavior & If you do so then You are doing Testing else You are not doing.
+
+
+
+JSON BAsed API Testing: REST (Representational state Transfer) API. It is not a Protocol. It uses HTTP Protocol (Works Over HTTP )
+
+XML Based API Testing : SOAP (Simple Object Access Protol) which is Protocol in itself. It don't uses Protocol of Other. It is heavy weighted Hence less Used or not used.
+
+-------------------------------------------API Testing Completed------------------
+
+
+
+
+Jira: It is Test Management Tool ( Manages all phases of STLC), Agile Management (Mostly Used in Agile), Defect Management/Reporting Tool.
+
+
+STLC:
+-----
+
+1.Test Planning: Test Manager Creates Test Plan which will have Objective & Strategy of Testing
+2.Test Monitoring & Control:
+	>Done By Manager or person allocated By Test Manager
+	>Monitoring Test Activity happens
+		>Creating Test Cases/Day
+		>Test Cases Created by per Tester
+		>Test Cases Executed Per Day
+		>Test Cases Executed Per Tester
+		>Defect identified By Per Tester
+		>Defect identified By testing Team		> JIRA
+
+		>By Scrum Board Manager will keep Eye on the task of Developer or Tester
+
+3.Test Analysis : UnderStand SRS/BRS
+4.Test Design : Writing Test Cases
+			Zephyre Plugin used for Test Designing > Management of Test Cases
+
+
+5.Test Implementation:  Writing Automation Scripts & Set the Test Environment
+6.Test Execution:
+		> Product will be given by Developer
+		> Tester will start performing Testing
+
+
+		Test Cycle 1:
+		-------------
+		1000 TC > Execute 1000 TC  > 200 Defects
+		200 Defects are reported
+			
+			Developer will Fix Defects & Updated Product/software will be given to 		you/tester once again.
+
+
+		Test Cycle 2:
+		------------
+		ReTesting & Regression Testing will be performed
+		50 Defects are identified & reported 
+						Developer will Fix Defects & Updated Product will be given to you once again
+
+
+		Test Cycle 3:
+		-------------
+		ReTesting & Regression Testing will be performed
+		0 Defects are identified 
+					
+
+		In Test Cycle 3 in above you met required Quality.
+7.Test Clouser Activity
+	>Storing & Sharing Artifacts/Documents
+	>Storing & Sharing Experience
+
+
+Managing Test Cycle also possible in Case of JIRA.
+
+
+
+Agile:
+-----
+Product Backlog : Total Pending Requirement/User Story for Complete Product
+Sprint Backlog  : Total Pending requirment / User Story for One Iteration
+
+1000 User Story
+250 req  > R1  >
+250 req	 > R2
+250 req  > R3
+250 req  > R4
+
+1st Day of Engineering
+ Total Subject to Clear Degree : 40    : Product Backlog ()
+ Total Subject  per Sem to Clear : 5
+
+R1 		>D	>C	>T	>Dep	>Maintenance 		Iteration/Sprint 1
+PB:1000						PB:750
+SB:250						SB:0
+
+
+R1 + R2		>D	>C	>T	>Dep	>Maintenance 		Iteration 2
+PB:750						PB:500
+SB:250						SB:0
+
+R1 + R2	+ R3	>D	>C	>T	>Dep	>Maintenance 		Iteration 3
+PB:500						PB:250
+SB:250						SB:0
+
+R1 + R2	+ R3+R4	>D	>C	>T	>Dep	>Maintenance 		Iteration 4
+PB:250						PB:0
+SB:250						SB:0
+
+
+
+Scrum Master : Team Lead > Gives Guidance & Support
+Product Owner : BA
+
+
+Whole Team Approach:
+--------------------
+A group is framed in Which designer, programmer, tester, customer representative will be involve.
+
+
+Adv:
+1.Quality is not responsibility of indivisual person its a group responsibility.
+2.Customer is acting as immediate Validator which will give high Quality of End Product
+3.There will be 15 min Daily StandUp Meeting (Due to this transParancy within team is there)
+	- What Happened YesterDay
+	- Any bottleneck ?
+	- What is Planned for Today ?
+4.Scrum Board also Adds in transParancy: (Notice Board of Your Collage)
+	
+	To Do 			In Progress			Done
+	-----			-----------			-------
+								Writting TC
+	
+								Writing Code
+
+	
+User Story:
+------------
+As a Customer 
+I want login Function
+So that I can do banking transactions at any time
+
+>Agile Iterations happens for 1-4 weeks only
+
+
+
+
+As a visitor I want search feature on Website  so that I can search any interested course
+
+Retrospective Meeting:
+----------------------
+Happens at the end of Every Iteration/sprint to Check what went right, what went wrong & What is improvement areas for future.
+
+
+As a <Type of Customer>
+I want <Some Feature or Function>
+So that <Some Benefits to Customer>
+
+
+-----------------------------------------------------------------------------------------------------------
+Epic : Larger User Story which can be splitted/broken in Multiple User Story
+       High Level of Requirement
+
+
+As a Customer of The Bank
+I want Mobile Banking Application 
+So that I can do Banking Transaction at any time
+	
+
+
+User Story Points:
+------------------
+	Estimated Efforts for completion of any User STory or Task
+
+Fibonacci Series :
+-----------------
+0,1,	1, 2, 3, 5, 8, 13, 21 etc
+
+
+
+
+
+Task of Developer:
+----------------
+1.Review/Understand User Story
+2.Design
+3.Code writing
+4.Writing Unit Testing Test Cases
+5.Execute Unit Testing Test Cases
+6.Debugging(Removing Bug Activity)
+
+
+Task of Tester:
+1.Review/Understand User Story
+2.Write Test Cases
+3.Write RTM
+4.Review
+5.Test Environment Setup
+6.Execute Test Case
+7.Defect Reporting
+8.Writing Automation Scripts etc.
+------------------------------------------------------------------------------------------------------
+
+EPIC:
+-----
+As a Student I want Web Application so that I can complete my course at any time
+As a trainer I want web application  so that I can manage my courses
+As a Visitor I want udemy Web Application so that I can explore courses without registration
+
+User Story:
+-----------
+As a visitor I want search feature on Website  so that I can search any interested course
+As a Visitor I want sign-up feature  on website so that I can register my self
+As a Visitor I want sign-in option so that I can sign-in when ever required
+As a Visitor I want filter option so that I filter out some not interested courses
+
+
+
+
+Created Test Cycle > Adding Test into Cycle.
+
+
+
+JIRA: It is Test Management Tool which manages all phases of STLC
+
+
+>Created  Scrum Project
+>Created Version
+>Created Epic
+>Created User Story
+>Adding Story to Sprint
+
+>Created Sprint
+>Then we Added user story to sprint
+>Started Sprint
+>Created Sub-Task (Developer & Tester's Sub Task) for Every User Story
+>Practicing Scrum Board
+
+Test Case Management:
+----------------------
+>Added Plugin for Test Management > Zephyr
+>Created Test Cases
+>Added Steps in Test Cases
+>Test Cycle Creation
+>Test Execution
+>Defect|Bug  Reporting
+>Report
+	BurnDown Chart: Represents how many story points you have burned against given timeline
+			Its a graph with Story point with Y-axis & Number of Days as X-axis.
+
+
+------------------------------------------------------------------------------------------------------------------
+Similar to Jira : ALM(QC)- HP, TestLink - Free/OpenSource, Tarantula etc.
+
+----------------------------------------------------------------------------------------------------------
+How many Issue Types in JIRA:
+1.Bug
+2.STory
+3.Epic
+4.Task
+
+5.Test > It will Come Only if you have Zephyr Plugin
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Git is SCM( Source Code Management Means It Manages Your Source Code)
+	>It Manages Source Code of Application on Cloud
+	>It Keeps Track of Changes done By AnyOne, When Changes Done, What Changes Done (Records everyThing)
+	And Suppose You do not want new Changes then you can roll Back to Previous Status Easily ( Like a time machine you can Travel 	Back in Time)
+	>It Supports Collabration
+		Suppose Team A is in India & Another Team B in in USA
+			Login			     Registration
+
+		
+		Suppose Team A is Done with COding Today then Team A will upload COde on GitHUb(by using git) then Team B from USA 		will Start coding from point where Indian team has stopped Coding.
+
+	
+
+
+
+Commands :
+----------
+1.git status   	> To know the status of Repository/Folder
+2.git init 	> To make the folder as Git Repository
+3.git add hello.txt	> To Start tracking some untracked Files/Folder  > This is 1st Step of Saving (This will not create new File)
+4.git commit -m "This is First Commit"
+5.Set Email id & name:
+	git config --global user.email "mpremchand99@gmail.com"
+	git config --global user.name "Premchand Vishwakarma" 
+6.git log	> To Know History of Commit
+7.git checkout idOfCommit    		> Going back in time Zone
+8.git checkout master			> To come to original time
